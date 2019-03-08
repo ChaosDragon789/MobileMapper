@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var mapView: MKMapView!
+    let barringtonAnnotation = MKPointAnnotation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let lat = 42.15704
+        let long = -88.14812
+        let coord = CLLocationCoordinate2DMake(lat,long)
+        barringtonAnnotation.coordinate = coord
+        barringtonAnnotation.title = "Barrington High School"
+        mapView.addAnnotation(barringtonAnnotation)
+        
     }
 
 
